@@ -1,4 +1,4 @@
-#!/bin/zsh 
+#!/bin/zsh
 
 environmentlc(){
     cat /opt/datadog/etc/environment | cut -c 5-
@@ -22,7 +22,7 @@ maintags(){
 }
 
 mainroles(){
-    cat /etc/update-motd.d/95-roles | awk '/Roles/{a=1;next}/Tags/{a=0}a' | grep -Ev "^$|encrypted-storage|agent-prod-to-staging|canary-security-logging|go-perf|dog-base|process-agent|agent6" | paste -d',' -s - 
+    cat /etc/update-motd.d/95-roles | awk '/Roles/{a=1;next}/Tags/{a=0}a' | grep -Ev "^$|encrypted-storage|agent-prod-to-staging|canary-security-logging|go-perf|dog-base|process-agent|agent6" | paste -d',' -s -
 }
 
 refreshtools(){
@@ -57,7 +57,7 @@ do_ssh () {
 
 jr(){
     local ip=$(consul-cli catalog service datadog --tag="$1" | jq -r ".[].Address" | head -1)
-    if [[ -z "$ip" ]]; then 
+    if [[ -z "$ip" ]]; then
         echo "Unkown role"
         return 1
     fi
@@ -68,7 +68,7 @@ jr(){
 
 ji(){
     local ip="$1"
-    if [[ "$ip" != 1* ]]; then 
+    if [[ "$ip" != 1* ]]; then
         ip=$(instance_to_ip $1)
     fi
     if [[ -z "$ip" ]]; then
