@@ -4,6 +4,14 @@ set-window-option -g mode-keys vi
 
 set -g base-index 1
 
+set -g default-terminal "screen-256color"
+
+#setting the delay between prefix and command
+set -sg escape-time 0
+
+bind | split-window -h
+bind a last-window
+
 set-window-option -g mode-keys vi
 set-window-option -g clock-mode-colour colour40 #green
 
