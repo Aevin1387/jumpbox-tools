@@ -3,7 +3,7 @@
 # GROS MÉNAGE
 cd ~
 # Don't delete .ssh otherwise you cannot get in!!
-rm -rf .bash* .bin* .cache* .chef* .config* .gitconfig .lesshst .oh-my-zsh .profile .ssh/known_hosts .vim* .zcomp* .zsh*
+rm -rf  .bin* .cache* .chef* .config* .gitconfig .lesshst .oh-my-zsh .profile .vim* .zcomp* .zsh*
 # In case we are re-running it
 rm -rf .jumpbox-tools
 
